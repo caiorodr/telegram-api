@@ -1,14 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { RegisterService } from './register.service';
+import { Cadastro } from '@prisma/client';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateRegisterDto } from './dto/create-register.dto';
-import { Cadastro, Prisma } from '@prisma/client';
 
-@Controller('register')
+@Controller('api/v1/registers')
+@ApiTags('registers')
 export class RegisterController {
   constructor(private readonly registerService: RegisterService) {}
 
   @Post()
-  create(@Body() createCadastroDto: Prisma.CadastroCreateInput): Promise<Cadastro> {
+  create(@Body() createCadastroDto: CreateRegisterDto): Promise<Cadastro> {
     return this.registerService.create(createCadastroDto);
   }
 
@@ -18,10 +20,17 @@ export class RegisterController {
   }
   
 
-  @Get('unique')
+  @Get('unique/:idTelegram')
   findUnique(
     @Param('idTelegram') idTelegram: string
   ): Promise<Cadastro> {
     return this.registerService.findUnique(idTelegram);
+  }
+
+  @Delete('remove/:idTelegram')
+  deleteUnique(
+    @Param('idTelegram') idTelegram: string
+  ): Promise<Cadastro> {
+    return this.registerService.deleteUnique(idTelegram);
   }
 }

@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { AccessService } from './access.service';
 import { CreateAccessDto } from './dto/create-access.dto';
 import { Acesso } from '@prisma/client';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller('access')
+@Controller('api/v1/access')
+@ApiTags('access')
 export class AccessController {
   constructor(private readonly accessService: AccessService) {}
 
@@ -17,10 +19,17 @@ export class AccessController {
     return this.accessService.findAll();
   }
 
-  @Get('unique')
+  @Get('unique/:idTelegram')
   findUnique(
     @Param('idTelegram') idTelegram: string
   ): Promise<Acesso> {
     return this.accessService.findUnique(idTelegram);
+  }
+
+  @Delete('remove/:idTelegram')
+  deleteUnique(
+    @Param('idTelegram') idTelegram: string
+  ): Promise<Acesso> {
+    return this.accessService.deleteUnique(idTelegram);
   }
 }

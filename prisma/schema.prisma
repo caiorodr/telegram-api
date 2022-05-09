@@ -22,11 +22,11 @@ model Cadastro {
 }
 
 model Acesso {
-  id          Int      @id @default(autoincrement())
-  id_telegram String   @unique @db.VarChar(20)
-  rotina      String   @db.VarChar(30)
-  descricao   String   @db.VarChar(30)
-  menu        String   @db.VarChar(1)
-  acesso      Cadastro @relation(fields: [acesso_Id], references: [id_telegram])
+  id          Int       @id @default(autoincrement())
+  id_telegram String    @unique @db.VarChar(20)
+  rotina      String    @db.VarChar(30)
+  descricao   String    @db.VarChar(30)
+  menu        String    @db.VarChar(1)
+  acesso      Cadastro? @relation(fields: [acesso_Id], references: [id_telegram])
   acesso_Id   String
 }

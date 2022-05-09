@@ -46,4 +46,19 @@ export class AccessService {
     }
 
   }
+
+
+  async deleteUnique(idTelegram: string): Promise<Acesso> {
+
+    try{
+      return await this.prisma.acesso.delete({
+        where: {
+          id_telegram: idTelegram
+        }
+      });
+    }catch(error) {
+      throw new HttpException(`Ocorreu um erro ao remover o cadastro: ${error}.`, HttpStatus.NOT_FOUND);
+    }
+
+  }
 }
