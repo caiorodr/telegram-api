@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cadastro {
+  id          Int      @id @default(autoincrement())
+  id_telegram String   @unique @db.VarChar(20)
+  tp_user     String   @db.VarChar(1)
+  cod_erp     String?  @db.VarChar(6)
+  descricao   String   @db.VarChar(30)
+  acessos     Acesso[]
+
+  @@map("CADASTRO")
+}
+
+model Acesso {
+  id          Int      @id @default(autoincrement())
+  id_telegram String   @unique @db.VarChar(20)
+  rotina      String   @db.VarChar(30)
+  descricao   String   @db.VarChar(30)
+  menu        String   @db.VarChar(1)
+  acesso      Cadastro @relation(fields: [acesso_Id], references: [id_telegram])
+  acesso_Id   String
+}
