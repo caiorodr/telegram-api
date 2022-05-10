@@ -671,7 +671,7 @@
 
 "@nestjs/config@^2.0.0":
   version "2.0.0"
-  resolved "https://registry.npmjs.org/@nestjs/config/-/config-2.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-2.0.0.tgz#a8fbec48a2b55488ac50ad5ed4cf2df89d398171"
   integrity sha512-Hi1k/1S5ogsS5c0OtNm72thiLSngijOaLDFaGI5ZPxNGpF23lctPg6ox3pYIOhXVRX/u+eiUIp71gswH2k8YNw==
   dependencies:
     dotenv "16.0.0"
@@ -734,7 +734,7 @@
 
 "@nestjs/swagger@^5.2.1":
   version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-5.2.1.tgz#0fbd5dbc84aeebc2912009cce1309d4bebe9a52c"
+  resolved "https://registry.npmjs.org/@nestjs/swagger/-/swagger-5.2.1.tgz"
   integrity sha512-7dNa08WCnTsW/oAk3Ujde+z64JMfNm19DhpXasFR8oJp/9pggYAbYU927HpA+GJsSFJX6adjIRZsCKUqaGWznw==
   dependencies:
     "@nestjs/mapped-types" "1.0.1"
@@ -1298,7 +1298,7 @@ ajv-keywords@^3.5.2:
   resolved "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.5.2.tgz"
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
 
-ajv@8.9.0:
+ajv@8.9.0, ajv@^8.0.0, ajv@^8.1.0:
   version "8.9.0"
   resolved "https://registry.npmjs.org/ajv/-/ajv-8.9.0.tgz"
   integrity sha512-qOKJyNj/h+OWx7s5DePL6Zu1KeM9jPZhwBqs+7DzP6bGOvqzVCSf0xueYmVuaC/oQ/VtS2zLMLHdQFbkka+XDQ==
@@ -1316,16 +1316,6 @@ ajv@^6.10.0, ajv@^6.11.0, ajv@^6.12.4, ajv@^6.12.5, ajv@^6.12.6:
     fast-deep-equal "^3.1.1"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
-    uri-js "^4.2.2"
-
-ajv@^8.0.0, ajv@^8.1.0:
-  version "8.11.0"
-  resolved "https://registry.npmjs.org/ajv/-/ajv-8.11.0.tgz"
-  integrity sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==
-  dependencies:
-    fast-deep-equal "^3.1.1"
-    json-schema-traverse "^1.0.0"
-    require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
 ansi-colors@4.1.1:
@@ -1867,11 +1857,6 @@ cookie@0.4.2, cookie@^0.4.0:
   version "0.4.2"
   resolved "https://registry.npmjs.org/cookie/-/cookie-0.4.2.tgz"
   integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
-
-cookie@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz"
-  integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
 cookiejar@^2.1.3:
   version "2.1.3"
@@ -2465,7 +2450,7 @@ fastify-static@^4.0.0:
 
 fastify-swagger@^5.2.0:
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/fastify-swagger/-/fastify-swagger-5.2.0.tgz#680cae4352b68b7e064aaaeb36fa1de60ff26dc7"
+  resolved "https://registry.npmjs.org/fastify-swagger/-/fastify-swagger-5.2.0.tgz"
   integrity sha512-yKct50Mev9YIrhd2FRO4AChcJM9JwTBCziIjA4C+AI+hV2ystaIklgHVEwHoyqlaeQ+B4gZ1Z5rgOE87i4llLg==
   dependencies:
     fastify-swagger-deprecated "npm:fastify-swagger@5.1.1"
@@ -3538,23 +3523,13 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-light-my-request@4.9.0:
+light-my-request@4.9.0, light-my-request@^4.2.0:
   version "4.9.0"
   resolved "https://registry.npmjs.org/light-my-request/-/light-my-request-4.9.0.tgz"
   integrity sha512-b1U3z4OVPoO/KanT14NRkXMr9rRtXAiq0ORqNrqhDyb5bGkZjAdEc6GRN1GWCfgaLBG+aq73qkCLDNeB3c2sLw==
   dependencies:
     ajv "^8.1.0"
     cookie "^0.4.0"
-    process-warning "^1.0.0"
-    set-cookie-parser "^2.4.1"
-
-light-my-request@^4.2.0:
-  version "4.10.1"
-  resolved "https://registry.npmjs.org/light-my-request/-/light-my-request-4.10.1.tgz"
-  integrity sha512-l+zWk0HXGhGzY7IYTZnYEqIpj3Mpcyk2f8+FkKUyREywvaiWCf2jyQVxpasKRsploY/nVpoqTlxx72CIeQNcIQ==
-  dependencies:
-    ajv "^8.1.0"
-    cookie "^0.5.0"
     process-warning "^1.0.0"
     set-cookie-parser "^2.4.1"
 
@@ -4886,7 +4861,7 @@ tsconfig-paths@4.0.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@2.3.1:
+tslib@2.3.1, tslib@^2.1.0:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -4895,11 +4870,6 @@ tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.1.0:
-  version "2.4.0"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
-  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tsutils@^3.21.0:
   version "3.21.0"
@@ -5181,6 +5151,11 @@ yargs@^17.3.1:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.0.0"
+
+yarn@^1.22.18:
+  version "1.22.18"
+  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.18.tgz"
+  integrity sha512-oFffv6Jp2+BTUBItzx1Z0dpikTX+raRdqupfqzeMKnoh7WD6RuPAxcqDkMUy9vafJkrB0YaV708znpuMhEBKGQ==
 
 yn@3.1.1:
   version "3.1.1"
