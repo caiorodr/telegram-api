@@ -22,12 +22,12 @@ export class AccessService {
     
   }
 
-  async findUnique(idTelegram: string): Promise<Acesso> {
+  async findUnique(id: number): Promise<Acesso> {
 
     try{
       return await this.prisma.acesso.findUnique({
         where:{
-          id_telegram: idTelegram
+          id: id
         }
       });
     }catch(error) {
@@ -48,12 +48,12 @@ export class AccessService {
   }
 
 
-  async deleteUnique(idTelegram: string): Promise<Acesso> {
+  async deleteUnique(id: number): Promise<Acesso> {
 
     try{
       return await this.prisma.acesso.delete({
         where: {
-          id_telegram: idTelegram
+          id:id
         }
       });
     }catch(error) {

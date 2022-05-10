@@ -32,28 +32,29 @@ export class AccessController {
   }
 
   
-  @Get('unique/:idTelegram')
+  @Get('unique/:id')
   findUnique(
     @Headers() header, @Res({ passthrough: true }) res: Response,
-    @Param('idTelegram') idTelegram: string
+    @Param('id') id: number
   ): Promise<Acesso> {
 
     if(header.authorization == process.env.JWT_TOKEN) {
-      return this.accessService.findUnique(idTelegram);
+      return this.accessService.findUnique(id);
     }else{
       res.status(HttpStatus.BAD_REQUEST).send('Token invalido!');
     }
     
   }
 
-  @Delete('remove/:idTelegram')
+  
+  @Delete('remove/:id')
   deleteUnique(
     @Headers() header, @Res({ passthrough: true }) res: Response,
-    @Param('idTelegram') idTelegram: string
+    @Param('id') id: number
   ): Promise<Acesso> {
 
     if(header.authorization == process.env.JWT_TOKEN){
-      return this.accessService.deleteUnique(idTelegram);
+      return this.accessService.deleteUnique(id);
     }else{
       res.status(HttpStatus.BAD_REQUEST).send('Token invalido!');
     }
