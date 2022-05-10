@@ -2,7 +2,6 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Cadastro } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
 import { CreateRegisterDto } from './dto/create-register.dto';
-import { UpdateRegisterDto } from './dto/update-register.dto';
 
 @Injectable()
 export class RegisterService {
