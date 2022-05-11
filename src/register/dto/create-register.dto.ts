@@ -1,19 +1,31 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Prisma } from '@prisma/client';
 
-export class CreateRegisterDto implements Prisma.CadastroCreateInput {
-  @ApiProperty()
+export class CreateRegisterDto implements Prisma.CadastroUncheckedCreateInput {
+  id?: number;
+
+  @ApiProperty({
+    maxLength: 20,
+  })
   id_telegram: string;
-  
-  @ApiProperty()
+
+  @ApiProperty({
+    maxLength: 1,
+  })
   tp_user: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    maxLength: 6,
+  })
   cod_erp?: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    maxLength: 30,
+  })
   descricao: string;
-  
-  acessos?: Prisma.AcessoCreateNestedManyWithoutAcessoInput;
- 
+
+  @ApiPropertyOptional()
+  acessos?: Prisma.AcessoCreateNestedManyWithoutCadastroInput;
+
+  createAt?: string | Date;
 }

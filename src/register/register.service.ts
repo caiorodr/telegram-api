@@ -5,57 +5,59 @@ import { CreateRegisterDto } from './dto/create-register.dto';
 
 @Injectable()
 export class RegisterService {
-  constructor( private prisma: PrismaService ){}
+  constructor(private prisma: PrismaService) {}
 
   async create(createCadastroDto: CreateRegisterDto): Promise<Cadastro> {
-    
-    try{
+    try {
       return await this.prisma.cadastro.create({
-        data: createCadastroDto
+        data: createCadastroDto,
       });
-    }catch(error) {
-      throw new HttpException(`Ocorreu um erro ao criar o cadastro: ${error}.`, HttpStatus.NOT_FOUND);
+    } catch (error) {
+      throw new HttpException(
+        `Ocorreu um erro ao criar o cadastro: ${error}.`,
+        HttpStatus.NOT_FOUND,
+      );
     }
   }
-
 
   async findAll(): Promise<Cadastro[]> {
-    try{
+    try {
       return await this.prisma.cadastro.findMany();
-    }catch(error) {
-      throw new HttpException(`Ocorreu um erro ao consultar todos os cadastros: ${error}.`, HttpStatus.NOT_FOUND);
+    } catch (error) {
+      throw new HttpException(
+        `Ocorreu um erro ao consultar todos os cadastros: ${error}.`,
+        HttpStatus.NOT_FOUND,
+      );
     }
-
   }
 
-
   async findUnique(idTelegram: string): Promise<Cadastro> {
-
-    try{
+    try {
       return await this.prisma.cadastro.findUnique({
         where: {
-          id_telegram: idTelegram
-        }
+          id_telegram: idTelegram,
+        },
       });
-    }catch(error) {
-      throw new HttpException(`Ocorreu um erro ao consultar o cadastro: ${error}.`, HttpStatus.NOT_FOUND);
+    } catch (error) {
+      throw new HttpException(
+        `Ocorreu um erro ao consultar o cadastro: ${error}.`,
+        HttpStatus.NOT_FOUND,
+      );
     }
-
   }
 
   async deleteUnique(idTelegram: string): Promise<Cadastro> {
-
-    try{
+    try {
       return await this.prisma.cadastro.delete({
         where: {
-          id_telegram: idTelegram
-        }
+          id_telegram: idTelegram,
+        },
       });
-    }catch(error) {
-      throw new HttpException(`Ocorreu um erro ao remover o cadastro: ${error}.`, HttpStatus.NOT_FOUND);
+    } catch (error) {
+      throw new HttpException(
+        `Ocorreu um erro ao remover o cadastro: ${error}.`,
+        HttpStatus.NOT_FOUND,
+      );
     }
-
   }
-
-
 }

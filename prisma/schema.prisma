@@ -16,16 +16,20 @@ model Cadastro {
   tp_user     String   @db.VarChar(1)
   cod_erp     String?  @db.VarChar(6)
   descricao   String   @db.VarChar(30)
+  create_at   DateTime @default(now())
   acessos     Acesso[]
 
   @@map("CADASTRO")
 }
 
 model Acesso {
-  id            Int       @id @default(autoincrement())
-  rotina        String    @db.VarChar(30)
-  descricao     String    @db.VarChar(30)
-  menu          String    @db.VarChar(1)
-  acesso        Cadastro? @relation(fields: [id_telegram], references: [id_telegram])
-  id_telegram   String
+  id          Int       @id @default(autoincrement())
+  rotina      String    @db.VarChar(30)
+  descricao   String    @db.VarChar(30)
+  menu        String    @db.VarChar(1)
+  cadastro    Cadastro? @relation(fields: [id_telegram], references: [id_telegram])
+  id_telegram String    @db.VarChar(20)
+  create_at   DateTime  @default(now())
+
+  @@map("ACESSO")
 }

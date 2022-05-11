@@ -29,7 +29,8 @@
 ## Deploy Cloud run GCP
 
 ```bash
-gcloud run deploy nestjs-telegram-api --source . --project i-hexagon-349014 --platform=managed --region southamerica-east1 --allow-unauthenticated --add-cloudsql-instances i-hexagon-349014:southamerica-east1:dev-webinnovation2 --set-env-vars="DATABASE_URL=postgresql://postgres:web2022@@35.247.206.84:5432/telegram?host=/cloudsql/i-hexagon-349014:southamerica-east1:dev-webinnovation2"
+gcloud run deploy nestjs-telegram-api --source . --project i-hexagon-349014 --platform=managed --region southamerica-east1 --allow-unauthenticated --add-cloudsql-instances i-hexagon-349014:southamerica-east1:dev-webinnovation2 --set-env-vars="DATABASE_URL=postgresql://postgres:web2022@@35.247.206.84:5432/telegram?host=/cloudsql/i-hexagon-349014:southamerica-east1:dev-webinnovation2" --set-env-vars="JWT_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWItaW5ub3ZhdGlvbiI6InRva2VuIHRlbGVncmFtIEdBSUEifQ.xio6DoKoemM-hPNWkgc_bEA6wyXWSgarbOQmhjnBbBU"
+```
 ```
 
 - [doc](https://zenn.dev/razokulover/articles/f8dd01db6c1e95)
