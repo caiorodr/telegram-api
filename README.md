@@ -27,7 +27,7 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Sonar
+## SonarCloud Quality
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=caiorodr_telegram-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=caiorodr_telegram-api)
 
