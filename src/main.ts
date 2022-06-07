@@ -17,7 +17,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('API TELEGRAM')
     .setDescription(
-      'API responsavel pelo cadastro e acesso ao BOT GAIA no telegram.',
+      'API responsavel pelo cadastro e acesso ao bot GAIA no telegram.',
     )
     .setVersion('1.0')
     .addBearerAuth(
@@ -26,7 +26,7 @@ async function bootstrap() {
         scheme: 'bearer',
         bearerFormat: 'JWT',
         name: 'JWT',
-        description: 'Enter JWT token',
+        description: 'JWT token',
         in: 'header',
       },
       'JWT-auth', // This name here is important for matching up with @ApiBearerAuth() in your controller!
