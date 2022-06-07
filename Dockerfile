@@ -2,7 +2,7 @@
 FROM node:16 AS builder
 
 ENV NODE_ENV=development
-ENV PORT=8080
+ENV PORT=3030
 ENV HOST=0.0.0.0
 
 WORKDIR /app

@@ -12,7 +12,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  const port = Number(process.env.PORT) || 8080;
+  const port = Number(process.env.PORT) || 3030;
 
   const config = new DocumentBuilder()
     .setTitle('API TELEGRAM')
